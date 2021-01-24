@@ -1,13 +1,14 @@
-const connection = require('connection');
+const connection = require('../config/connection.js');
 
 const orm = {
 
-selectAll: function() {
+selectAll: function(cb) {
     connection.query('select * from burgers', function(err,results) {
         if (err) {
             return 'Data could not be returned.';
         } else {
-            return results;
+            console.log(results);
+            cb(results);
         }
     });
 },
