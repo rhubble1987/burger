@@ -6,16 +6,14 @@ const router = express.Router();
 router.get('/', function(req,res) {
     Burger.all(function(data) {
         const handlebarsObject = {
-            id: data.id,
-            burgerName: data.burger_name,
-            devoured: data.devoured
+            burgers: data
         };
         res.render('index', handlebarsObject);
     });
 });
 
 router.post('/api/burgers', function(req,res) {
-    Burger.insertOne(["burger_name","devoured"],[req.body.burger,req.body.devoured], function(err,result) {
+    Burger.create(req.body.burgerName, req.body.devoured, function(err,result) {
         if (err) {
             res.sendStatus(500);
         } else {
@@ -25,19 +23,7 @@ router.post('/api/burgers', function(req,res) {
 });
 
 router.put('/api/burgers/:id', function(req,res) {
-    const burgerId = req.params.id;
-
-    Burger.update(
-        {
-            burger: req.body.burger
-        },
-        {
-            devoured: req.body.devoured
-        },
-        {
-            burger: req.body.id
-        },
-        function(err,result) {
+    Burger.update(req.body.id, req.body.devoured, function(err,result) {
             if(result.changedRows === 0) {
                 return res.sendStatus(404).end();
             } else if (err) {
