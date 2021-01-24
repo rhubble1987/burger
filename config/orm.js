@@ -7,13 +7,12 @@ selectAll: function(cb) {
         if (err) {
             throw err;
         } else {
-            console.log(results);
             cb(results);
         }
     });
 },
-insertOne: function(newBurger,isDevoured, cb) {
-       connection.query('insert into burgers (burger_name,devoured) values ??', [newBurger,isDevoured], function (err, result) {
+insertOne: function(newBurger, cb) {
+       connection.query('insert into burgers (burger_name,devoured) values (?, 0)', [newBurger], function (err, result) {
           if (err) {
               return 'New burger could not be created.';
           } else {
@@ -21,8 +20,8 @@ insertOne: function(newBurger,isDevoured, cb) {
           }
        });
     },
-updateOne: function(burgerId, isDevoured, cb) {
-    connection.query('update burgers set devoured = ? where id = ?', [burgerId,isDevoured], function(err,result) {
+updateOne: function(burgerId, cb) {
+    connection.query('update burgers set devoured = 1 where id = ?', [burgerId], function(err,result) {
         if (err) {
             return 'This burger could not be updated.';
         } else {
