@@ -6,7 +6,9 @@ const router = express.Router();
 router.get('/', function(req,res) {
     Burger.all(function(data) {
         const handlebarsObject = {
-            burgers: data
+            id: data.id,
+            burgerName: data.burger_name,
+            devoured: data.devoured
         };
         res.render('index', handlebarsObject);
     });
