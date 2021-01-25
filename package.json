@@ -2,7 +2,15 @@
   "name": "burger",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "dependencies": {
+    "bulma": "^0.9.1",
+    "bulma-start": "^0.0.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -17,13 +25,5 @@
   "bugs": {
     "url": "https://github.com/rhubble1987/burger/issues"
   },
-  "homepage": "https://github.com/rhubble1987/burger#readme",
-  "dependencies": {
-    "bulma": "^0.9.1",
-    "bulma-start": "0.0.4",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "mysql": "^2.18.1"
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/rhubble1987/burger#readme"
 }
