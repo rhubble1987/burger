@@ -1,5 +1,8 @@
 <h1>Eat-Da-Burger!</h1>
 
+
+<div class='columns is-centered'>
+    <div class="column">
 <h2>Burgers that need to be devoured</h2>
 
 <ul>
@@ -9,17 +12,9 @@
     {{/unless}}
   {{/each}}
 </ul>
+</div>
 
-<h2>Burgers that have been devoured</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-
+<div class="column">
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -30,3 +25,17 @@
 
   <button id="new-burger" type="submit">Add Burger</button>
 </form>
+</div>
+
+<div class="column">
+<h2>Burgers that have been devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+      {{> burgers/burger-block devoured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+</div>
