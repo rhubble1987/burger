@@ -5,7 +5,7 @@ const orm = {
 selectAll: function(cb) {
     connection.query('select * from burgers', function(err,results) {
         if (err) {
-            throw err;
+            return 'Data could not be returned.';
         } else {
             cb(results);
         }
