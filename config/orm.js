@@ -6,9 +6,9 @@ selectAll: function(cb) {
     connection.query('select * from burgers', function(err,results) {
         if (err) {
             return 'Data could not be returned.';
-        } else {
-            cb(results);
         }
+            cb(results);
+        
     });
 },
 insertOne: function(newBurger, cb) {
