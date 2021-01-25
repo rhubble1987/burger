@@ -1,9 +1,16 @@
-<h1>Eat-Da-Burger!</h1>
+<section class="hero is-small is-primary is-bold">
+  <div class="hero-body">
+      <h1 class="title is-1">
+        Eat-Da-Burger!
+      </h1>
+  </div>
+</section>
+
 
 
 <div class='columns is-centered'>
-    <div class="column">
-<h2>Burgers that need to be devoured</h2>
+    <div class="column mx-2 mt-2">
+<h2 class="title">Burgers to Devour</h2>
 
 <ul>
   {{#each burgers}}
@@ -14,8 +21,8 @@
 </ul>
 </div>
 
-<div class="column">
-<h2>Add a Burger</h2>
+<div class="column mx-2 mt-2">
+<h2 class="title">Add a Burger</h2>
 <form class="create-form">
 
   <div class="form-group">
@@ -27,8 +34,8 @@
 </form>
 </div>
 
-<div class="column">
-<h2>Burgers that have been devoured</h2>
+<div class="column mx-2 mt-2">
+<h2 class="title">Devoured Burgers</h2>
 
 <ul>
   {{#each burgers}}
